@@ -1,0 +1,120 @@
+:root {
+  --gold: #F2B705;
+  --gold-light: #F2B705;
+  --gold-dark: #F2B705;
+  --blue: #1F3C88;
+  --navy: #0A2540;
+  --navy-light: #1A3A5C;
+  --navy-dark: #061422;
+  --background: #ffffff; 
+  --foreground: #1A2632;
+  --card: #FFFFFF;
+  --card-foreground: #1A2632;
+  --muted: #6B7280;
+  --muted-foreground: #9CA3AF;
+  --border: #E5E7EB;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.events-hero {
+  padding: 120px 0 3px;
+}
+
+.events-title {
+  font-family: "Noto Serif Display", serif;
+  font-size: 53px;
+  text-align: center;
+  color: #1F3C88;
+}
+
+.event-block {
+  padding: 40px 0;
+}
+
+.event-narrow {
+  max-width: 820px;
+}
+
+.event-image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 50px;
+  box-shadow: 0 16px 45px rgba(0,0,0,0.14);
+}
+
+.event-kicker {
+  font-size: 17px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  color: #555;
+}
+
+.event-body p {
+  font-size: 16.8px;
+  line-height: 1.75;
+  margin-bottom: 22px;
+  color: #2B2B2B;
+  font-family: "Inter", sans-serif;
+}
+
+.event-body-list {
+  padding-left: 20px;
+  color: #2B2B2B;
+  list-style: disc;
+  padding-left: 20px;
+  font-size: 16.8px;
+}
+
+.event-body-list li {
+  margin-bottom: 10px;
+  font-size: 16.8px;
+  line-height: 1.7;
+}
+
+.event-body ul {
+  margin: 20px 0 30px;
+  padding-left: 20px;
+}
+
+.event-body li {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.event-details {
+  margin-top: 30px;
+}
+
+.event-details p {
+  font-size: 16.8px;
+  margin-bottom: 15px;
+}
+
+.event-rsvp {
+  display: inline-block;
+  margin-top: 45px;
+  padding: 14px 44px;
+  background: #d3167c;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-rsvp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(211,22,124,0.35);
+}
+
+.event-divider {
+  border: none;
+  height: 1px;
+  background: #e3e3e3;
+  max-width: 600px;
+  margin: 0 auto;
+}

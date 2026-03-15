@@ -1,0 +1,461 @@
+:root {
+  --gold: #F2B705;
+  --gold-light: #F2B705;
+  --gold-dark: #F2B705;
+  --blue: #1F3C88;
+  --navy: #0A2540;
+  --navy-light: #1A3A5C;
+  --navy-dark: #061422;
+  --background: #ffffff; 
+  --foreground: #1A2632;
+  --card: #FFFFFF;
+  --card-foreground: #1A2632;
+  --muted: #6B7280;
+  --muted-foreground: #9CA3AF;
+  --border: #E5E7EB;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root {
+    --color-card-background: #ffffff;
+    --color-text-primary: #3d3d3d;
+    --color-text-secondary: #6b6b6b;
+    --color-accent: #F2B705;
+    --color-accent-dark: #b8965a;
+    --color-accent-light: #f4efe5;
+    --color-link: #8b6914;
+    --color-link-hover: #c9a66b;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 1.2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 2rem;
+
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+body {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* ====================================
+   Navbar Override
+   ==================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #d3167c;
+  padding: 0.50rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem 0 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  grid-column: 2;
+  justify-self: center;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  font-size: 1.27rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #D4AF37;
+}
+
+/* ====================================
+   Layout
+   ==================================== */
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* ====================================
+   Sections
+   ==================================== */
+.hero-section {
+    padding: var(--spacing-3xl) 0;
+    padding-top: 132px;
+    background-color: var(--color-card-background);
+}
+
+.journey-section {
+    padding: 17px;
+    background-color: var(--color-background);
+    position: relative;
+}
+
+
+.journey-section .section-title {
+    color: #1F3C88;
+    font-family: "Noto Serif Display", serif;
+}
+
+.journey-section .text-content p:first-of-type,
+.beliefs-section .beliefs-intro,
+.work-section .work-intro,
+.thankyou-section .text-content p:first-of-type {
+    color: #d3167c;
+    margin-top: -25px;
+    font-size: 26px;
+    font-family: "Noto Serif Display", serif;
+
+}
+
+.beliefs-section {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-card-background);
+}
+
+.beliefs-section .section-title {
+    color: #1F3C88;
+    font-family: "Noto Serif Display", serif;
+
+}
+
+
+.work-section {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-background);
+}
+
+.work-section .section-title {
+    color: #1F3C88;
+    font-family: "Noto Serif Display", serif;
+
+}
+
+
+.thankyou-section {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-card-background);
+}
+
+.thankyou-section .section-title {
+    color: #1F3C88;
+    font-family: "Noto Serif Display", serif;
+
+}
+
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr 1.5fr;
+        gap: var(--spacing-2xl);
+    }
+}
+
+/* Portrait */
+.portrait-wrapper {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.portrait-image {
+    width: 100%;
+    height: 700px;
+    max-width: 500px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .portrait-image {
+        margin: 0;
+    }
+}
+
+/* Content */
+.content-wrapper {
+    animation: slideUp 0.6s ease-out 0.2s both;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-family: "Noto Serif Display", serif;
+    font-size: 53px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1F3C88;
+    margin-bottom: var(--spacing-sm);
+    font-style: normal;
+}
+
+
+
+/* NEEDS TO BE DISCUSSED */
+.hero-subtitles {
+    display: block;
+    font-family: "Noto Serif Display", serif;
+    font-style: normal;
+    font-size: 26px;
+    font-weight: 500;
+    color: #d3167c;
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+
+/* ====================================
+   Text Content
+   ==================================== */
+.text-content {
+    color: #2B2B2B;
+    font-size: 19.2px;
+}
+
+.text-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+.text-content p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight-text {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+/* ====================================
+   Links
+   ==================================== */
+.book-link {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color var(--transition-base), text-decoration-color var(--transition-base);
+}
+
+.book-link:hover {
+    color: var(--color-link-hover);
+    text-decoration-color: var(--color-link-hover);
+}
+
+.program-link {
+    color: var(--color-link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    font-weight: 500;
+    transition: color var(--transition-base), text-decoration-color var(--transition-base);
+}
+
+.program-link:hover {
+    color: var(--color-link-hover);
+    text-decoration-color: var(--color-link-hover);
+}
+
+/* ====================================
+   Section Titles
+   ==================================== */
+.section-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-lg);
+}
+
+@media (min-width: 640px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 3rem;
+    }
+}
+
+.beliefs-intro {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.beliefs-list {
+    margin-bottom: var(--spacing-xl);
+}
+
+.belief-item {
+    font-family: "Inter", sans-serif;
+    font-size: 19.2px;
+    font-weight: 300;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+    position: relative;
+    line-height: 1.4;
+    color: #2B2B2B;
+}
+
+.belief-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    background-color: #d3167c;
+    border-radius: 50%;
+}
+
+
+.work-intro {
+    margin-bottom: 30px;
+}
+
+.programs-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: -30px;
+}
+
+.program-item {
+    font-size: 19.2px;
+    color: #2B2B2B
+}
+
+.program-description {
+    font-weight: 400;
+    font-size: 19.2px;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .hero-section,
+    .journey-section,
+    .beliefs-section,
+    .work-section,
+    .thankyou-section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .belief-item {
+        font-size: 1.25rem;
+        padding-left: var(--spacing-md);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+@media print {
+    body {
+        background-color: white;
+    }
+
+    .hero-section,
+    .beliefs-section,
+    .thankyou-section {
+        background-color: white;
+    }
+}

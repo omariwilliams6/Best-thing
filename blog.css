@@ -1,0 +1,148 @@
+:root {
+  --gold: #F2B705;
+  --gold-light: #F2B705;
+  --gold-dark: #F2B705;
+  --blue: #1F3C88;
+  --navy: #0A2540;
+  --navy-light: #1A3A5C;
+  --navy-dark: #061422;
+  --background: #ffffff; 
+  --foreground: #1A2632;
+  --card: #FFFFFF;
+  --card-foreground: #1A2632;
+  --muted: #6B7280;
+  --muted-foreground: #9CA3AF;
+  --border: #E5E7EB;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root {
+  color-scheme: light;
+}
+
+.blog-main {
+  background-color: var(--background);
+}
+
+.blog-hero {
+  padding: 8rem 1.5rem 2rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), var(--background));
+}
+
+.blog-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.blog-title {
+  font-size: 53px;
+  font-weight: 700;
+  color: var(--blue);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-family: "Noto Serif Display", serif;
+
+}
+
+.blog-subtitle {
+  font-size: 23px;
+  text-align: center;
+  color: #d3167c;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0;
+  font-family: "Noto Serif Display", serif;
+
+}
+
+.blog-feed {
+  padding: 2rem 1.5rem 6rem;
+}
+
+.feed-status {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.blog-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.blog-card {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.blog-card-image {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 2px);
+  flex-shrink: 0;
+}
+
+.blog-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.blog-card-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  color: var(--navy);
+}
+
+.blog-card-title a {
+  color: inherit;
+}
+
+.blog-card-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-family: "Inter", sans-serif;
+
+}
+
+.blog-card-excerpt {
+  color: var(--foreground);
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+.blog-card-link {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .blog-hero {
+    padding-top: 7rem;
+  }
+
+  .blog-title {
+    font-size: 2.5rem;
+  }
+
+  .blog-card {
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .blog-card-image {
+    width: 100%;
+    height: 220px;
+  }
+}

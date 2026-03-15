@@ -1,0 +1,150 @@
+:root {
+  --gold: #F2B705;
+  --gold-light: #F2B705;
+  --gold-dark: #F2B705;
+  --blue: #1F3C88;
+  --navy: #0A2540;
+  --navy-light: #1A3A5C;
+  --navy-dark: #061422;
+  --background: #ffffff; 
+  --foreground: #1A2632;
+  --card: #FFFFFF;
+  --card-foreground: #1A2632;
+  --muted: #6B7280;
+  --muted-foreground: #9CA3AF;
+  --border: #E5E7EB;
+  --radius: 12px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sp-hero {
+  padding: 140px 0 80px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.sp-title {
+  font-family: "Noto Serif Display", serif;
+  font-size: 52px;
+  color: #1F3C88;
+  margin-bottom: 2px;
+}
+
+.sp-intro {
+  font-family: "Noto Serif Display", serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #d3167c;
+}
+
+
+.sp-introd {
+  font-family: "Noto Serif Display", serif;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #F2B705;
+}
+
+.sp-section {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.sp-section.alt {
+  background: #ffffff;
+}
+
+.sp-grid {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+
+@media (min-width: 768px) {
+  .sp-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.sp-image img {
+  width: 100%;
+  max-width: 1020px; 
+  height: auto;
+  display: block;
+  margin: 0 auto;   
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;   
+  margin-bottom: 24px;   
+}
+
+.sp-label {
+  display: block;
+  font-size: 53px;
+  color: #1F3C88;
+  font-family: "Noto Serif Display", serif;
+  margin-bottom: -2px;
+}
+
+.sp-content h2 {
+  font-size: 40px;
+  color: #d3167c;
+  font-family: "Noto Serif Display", serif;
+  margin-bottom: 15px;
+}
+
+.sp-content h3 {
+  font-size: 25px;
+  color: #F2B705;
+  font-family: "Noto Serif Display", serif;
+  margin-bottom: 15px;
+}
+
+.sp-content p {
+  font-size: 19.2px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #2B2B2B;
+  font-family: "Inter", sans-serif;
+}
+
+/* CTA */
+.sp-cta {
+  padding: 120px 0;
+  text-align: center;
+  background: #1F3C88;
+  color: #ffffff;
+}
+
+.sp-cta h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.sp-cta p {
+  font-size: 20px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.sp-button {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #d3167c;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 6px;
+  transition: background 0.25s ease;
+}
+
+.sp-button:hover {
+  background: #b01267;
+}
