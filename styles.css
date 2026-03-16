@@ -29,8 +29,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
 body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -40,7 +38,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 img {
   max-width: 100%;
@@ -394,9 +391,6 @@ h1 {
   color: linear-gradient(135deg, var(--gold), var(--gold-light));
 }
 
-/* ========================================
-   Book Sections
-   ======================================== */
 .book-section {
   padding: 10rem 1.5rem;
   position: relative;
@@ -531,10 +525,6 @@ h1 {
   box-shadow: var(--shadow-lg);
 }
 
-
-/* ========================================
-   CTA Section
-   ======================================== */
 .cta-section {
   padding: 5rem 1.5rem;
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
@@ -578,7 +568,6 @@ h1 {
   margin-bottom: 3rem;
 }
 
-/* USE THIS FOR FOOTER */
 .footer-logo {
   height: 80px;
   margin-bottom: 1.25rem;
@@ -678,7 +667,7 @@ h1 {
 }
 
 .footer-tagline-spacing {
-  margin-top: 0.7rem; /* or margin-bottom */
+  margin-top: 0.7rem; 
 }
 .footer-bottom-links a {
   color: rgba(255, 255, 255, 0.7);
@@ -708,9 +697,6 @@ h1 {
   animation: fadeInUp 0.8s ease-out 0.2s backwards;
 }
 
-/* ========================================
-   Responsive Design
-   ======================================== */
 @media (max-width: 1024px) {
   .hero-container {
     grid-template-columns: 1fr;
