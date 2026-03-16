@@ -117,18 +117,12 @@ body {
   color: #D4AF37;
 }
 
-/* ====================================
-   Layout
-   ==================================== */
 .container {
     max-width: 75rem;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
 
-/* ====================================
-   Sections
-   ==================================== */
 .hero-section {
     padding: var(--spacing-3xl) 0;
     padding-top: 132px;

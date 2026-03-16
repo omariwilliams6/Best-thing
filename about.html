@@ -55,7 +55,7 @@
                     <h1 class="hero-title">
                         Heather Dolland Tamam
                     
-                        <span class="hero-subtitles">Helping You Turn Life's Transitions Into Purposeful New Beginnings</span>
+                        <span class="hero-subtitles"></span>
                     </h1>
 
                     <div class="text-content">
@@ -225,6 +225,26 @@
 </div>
 </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/storyblok-js-client@5"></script>
 
+<script>
+const StoryblokClient = window.storyblokJsClient;
+
+const storyblok = new StoryblokClient({
+  accessToken: "xFsQITLLf6x0s0mejkfTJAtt"
+});
+
+storyblok.get('cdn/stories/about', {
+  version: 'published'
+}).then((res) => {
+
+  const data = res.data.story.content;
+
+  document.querySelector(".hero-title").textContent = data.title;
+  document.querySelector(".hero-subtitles").textContent = data.subtitle;
+  document.querySelector(".portrait-image").src = data.portrait.filename;
+  document.querySelector(".text-content").innerHTML = data.intro_text;
+});
+</script>
 </body>
 </html>
