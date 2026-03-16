@@ -235,7 +235,7 @@ const storyblok = new StoryblokClient({
 });
 
 storyblok.get('cdn/stories/about', {
-  version: 'published'
+  version: 'draft'
 }).then((res) => {
 
   const data = res.data.story.content;
@@ -243,7 +243,6 @@ storyblok.get('cdn/stories/about', {
   document.querySelector(".hero-title").textContent = data.title;
   document.querySelector(".hero-subtitles").textContent = data.subtitle;
   document.querySelector(".portrait-image").src = data.portrait.filename;
-  document.querySelector(".text-content").innerHTML = data.intro_text;
 });
 </script>
 </body>
