@@ -225,27 +225,24 @@
 </div>
 </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/storyblok-js-client@5"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/storyblok-js-client@5"></script>
 <script>
-const storyblok = new StoryblokClient({
-  accessToken: "xFsQITLLf6x0s0mejkfTJAtt"
-});
+fetch("https://api.storyblok.com/v2/cdn/stories/about?version=draft&token=xFsQITLLf6x0s0mejkfTJAtt")
+  .then(response => response.json())
+  .then(res => {
+    console.log("STORYBLOK OK", res);
 
-storyblok.get('cdn/stories/about', {
-  version: 'draft'
-}).then((res) => {
-  console.log('STORYBLOK OK', res);
-  const data = res.data.story.content;
+    const data = res.story.content;
 
-  document.querySelector(".hero-title").textContent = data.title || "NO TITLE";
-  document.querySelector(".hero-subtitles").textContent = data.subtitle || "NO SUBTITLE";
-  if (data.portrait?.filename) {
-    document.querySelector(".portrait-image").src = data.portrait.filename;
-  }
-}).catch((err) => {
-  console.error('STORYBLOK ERROR', err);
-});
-</script></body>
+    document.querySelector(".hero-title").textContent = data.title || "";
+    document.querySelector(".hero-subtitles").textContent = data.subtitle || "";
+
+    if (data.portrait && data.portrait.filename) {
+      document.querySelector(".portrait-image").src = data.portrait.filename;
+    }
+  })
+  .catch(err => {
+    console.error("STORYBLOK ERROR", err);
+  });
+</script>
+</body>
 </html>
