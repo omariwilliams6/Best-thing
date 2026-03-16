@@ -227,9 +227,8 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/storyblok-js-client@5"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/storyblok-js-client@5"></script>
 <script>
-const StoryblokClient = window.storyblokJsClient;
-
 const storyblok = new StoryblokClient({
   accessToken: "xFsQITLLf6x0s0mejkfTJAtt"
 });
@@ -237,13 +236,16 @@ const storyblok = new StoryblokClient({
 storyblok.get('cdn/stories/about', {
   version: 'draft'
 }).then((res) => {
-
+  console.log('STORYBLOK OK', res);
   const data = res.data.story.content;
 
-  document.querySelector(".hero-title").textContent = data.title;
-  document.querySelector(".hero-subtitles").textContent = data.subtitle;
-  document.querySelector(".portrait-image").src = data.portrait.filename;
+  document.querySelector(".hero-title").textContent = data.title || "NO TITLE";
+  document.querySelector(".hero-subtitles").textContent = data.subtitle || "NO SUBTITLE";
+  if (data.portrait?.filename) {
+    document.querySelector(".portrait-image").src = data.portrait.filename;
+  }
+}).catch((err) => {
+  console.error('STORYBLOK ERROR', err);
 });
-</script>
-</body>
+</script></body>
 </html>
