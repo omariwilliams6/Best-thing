@@ -53,28 +53,28 @@
 
                 <div class="content-wrapper">
                     <h1 class="hero-title">
-                        Heather Dolland Tamam</h1>
+                        Tamam</h1>
                     
                         <span class="hero-subtitles">Helping You Turn Life's Transitions Into Purposeful New Beginnings</span>
                     
 
                     <div class="text-content">
-                        <p>
+                        <p class="hero-intro-1">
                             Welcome — I'm Heather Dolland Tamam, Founder of Doltam Creative Solutions, a 
                             certified MWBE consultancy dedicated to helping women reclaim their power, redefine success, and design lives they love.
                         </p>
                         <p>
-                            I'm also the author of
-                            <a href="#" class="book-link">
+                            <span class="hero-intro-2a">I'm also the author of</span>
+                            <a href="#" class="book-link book-1">
                                 Create Your Own Table: A Guide to Discovering Your Purpose
                             </a>
-                            and
-                            <a href="#" class="book-link">
+                            <span class="hero-intro-2b">and</span>
+                            <a href="#" class="book-link book-2">
                                 Pivot: Because Life Doesn't Always Go As Planned
                             </a>
-                            , and the creator of transformational online programs including The Empowerment Blueprint, The Doltam Pivot Program, and Become a Content Creator.
+                            <span class="hero-intro-2c"> , and the creator of transformational online programs including The Empowerment Blueprint, The Doltam Pivot Program, and Become a Content Creator.</span>
                         </p>
-                        <p>
+                        <p class="hero-intro-3">
                             Through my work, I guide professionals — especially women who feel undervalued in unfulfilling corporate roles — to rediscover their purpose and transform it into passion-driven businesses.
                         </p>
                     </div>
@@ -85,21 +85,15 @@
 
     <section class="journey-section">
         <div class="container">
-            <h2 class="section-title">My Journey</h2>
+            <h2 class="section-title journey-title">My Journey</h2>
+            <p class="journey-subtitle">My path has never been linear, and that's exactly what makes it powerful.</p>
 
-            <div class="text-content">
-                <p>
-                    My path has never been linear, and that's exactly what makes it powerful.
-                </p>
-                <p>
-                    I began studying architecture, learning how to create strong foundations that withstand change. After years in corporate consulting, I realized that my blueprint wasn't meant for buildings, it was meant for people.
-                </p>
-                <p>
-                    Like many of the clients I now serve, I once felt stuck between who I was and who I was becoming. Every pivot, every challenge, and every reinvention led me closer to my calling: helping others design their own version of freedom.
-                </p>
-                <p>
-                    Today, I merge strategic business insight with mindset transformation to help my clients build lives that feel as good as they look on paper.
-                </p>
+            <div class="text-content journey-paragraphs">
+                <p>I began studying architecture, learning how to create strong foundations that withstand change. 
+                  After years in corporate consulting, I realized that my blueprint wasn't meant for buildings, it was meant for people.</p>
+                <p>Like many of the clients I now serve, I once felt stuck between who I was and who I was becoming. 
+                  Every pivot, every challenge, and every reinvention led me closer to my calling: helping others design their own version of freedom.</p>
+                <p>Today, I merge strategic business insight with mindset transformation to help my clients build lives that feel as good as they look on paper.</p>
             </div>
         </div>
     </section>
@@ -229,14 +223,55 @@ fetch("https://api.storyblok.com/v2/cdn/stories/about?version=draft&token=xFsQIT
   .then(res => {
     console.log("STORYBLOK OK", res);
 
-    const data = res.story.content;
+    const blocks = res.story.content.body || [];
 
-    document.querySelector(".hero-title").textContent = data.title || "";
-    document.querySelector(".hero-subtitles").textContent = data.subtitle || "";
+function renderParagraphs(text, containerSelector) {
+  const container = document.querySelector(containerSelector);
+  if (!container || !text) return;
 
-    if (data.portrait && data.portrait.filename) {
-      document.querySelector(".portrait-image").src = data.portrait.filename;
-    }
+  container.innerHTML = "";
+
+  const paragraphs = text
+    .split(/\n\s*\n/)
+    .map(p => p.trim())
+    .filter(Boolean);
+
+  paragraphs.forEach(paragraph => {
+    const p = document.createElement("p");
+    p.textContent = paragraph;
+    container.appendChild(p);
+  });
+}
+    blocks.forEach(block => {
+      if (block.component === "hero") {
+        document.querySelector(".hero-title").textContent = block.title || "";
+        document.querySelector(".hero-subtitles").textContent = block.subtitle || "";
+
+        if (block.portrait && block.portrait.filename) {
+          document.querySelector(".portrait-image").src = block.portrait.filename;
+        }
+
+        document.querySelector(".hero-intro-1").textContent = block.intro_1 || "";
+        document.querySelector(".hero-intro-2a").textContent = block.intro_2a || "";
+        document.querySelector(".hero-intro-2b").textContent = block.intro_2b || "";
+        document.querySelector(".hero-intro-2c").textContent = block.intro_2c || "";
+        document.querySelector(".hero-intro-3").textContent = block.intro_3 || "";
+
+        document.querySelector(".book-1").textContent = block.book_1_title || "";
+        document.querySelector(".book-1").href =
+          block.book_1_link?.url || block.book_1_link?.cached_url || "#";
+
+        document.querySelector(".book-2").textContent = block.book_2_title || "";
+        document.querySelector(".book-2").href =
+          block.book_2_link?.url || block.book_2_link?.cached_url || "#";
+      }
+
+      if (block.component === "journey") {
+        document.querySelector(".journey-title").textContent = block.title_main || "";
+        document.querySelector(".journey-subtitle").textContent = block.subtitle || "";
+        renderParagraphs(block.paragraphs, ".journey-paragraphs");
+      }
+    });
   })
   .catch(err => {
     console.error("STORYBLOK ERROR", err);
