@@ -267,7 +267,7 @@ function renderParagraphs(text, containerSelector) {
       }
 
       if (block.component === "journey") {
-        document.querySelector(".journey-title").textContent = block.title_main || "";
+        document.querySelector(".journey-title").textContent = block.title || "";
         document.querySelector(".journey-subtitle").textContent = block.subtitle || "";
         renderParagraphs(block.paragraphs, ".journey-paragraphs");
       }
