@@ -266,11 +266,15 @@ function renderParagraphs(text, containerSelector) {
           block.book_2_link?.url || block.book_2_link?.cached_url || "#";
       }
 
-      if (block.component === "journey") {
-        document.querySelector(".journey-title").textContent = block.title || "";
-        document.querySelector(".journey-subtitle").textContent = block.subtitle || "";
-        renderParagraphs(block.paragraphs, ".journey-paragraphs");
-      }
+const journeyTitle = document.querySelector(".journey-title");
+const journeySubtitle = document.querySelector(".journey-subtitle");
+
+if (block.component === "journey") {
+  if (block.title && journeyTitle) journeyTitle.textContent = block.title;
+  if (block.subtitle && journeySubtitle) journeySubtitle.textContent = block.subtitle;
+
+  renderParagraphs(block.paragraphs, ".journey-paragraphs");
+}
     });
   })
   .catch(err => {

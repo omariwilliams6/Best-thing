@@ -453,3 +453,8 @@ body {
         background-color: white;
     }
 }
+
+.journey-subtitle {
+  color: var(--foreground);
+  margin: 0 0 16px 0;
+}
