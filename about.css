@@ -73,9 +73,6 @@ body {
     line-height: 1.6;
 }
 
-/* ====================================
-   Navbar Override
-   ==================================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -141,15 +138,20 @@ body {
     font-family: "Noto Serif Display", serif;
 }
 
-.journey-section .text-content p:first-of-type,
 .beliefs-section .beliefs-intro,
-.work-section .work-intro,
-.thankyou-section .text-content p:first-of-type {
+.work-section .work-intro {
     color: #d3167c;
     margin-top: -25px;
     font-size: 26px;
     font-family: "Noto Serif Display", serif;
+}
 
+.journey-subtitle {
+  color: #d3167c;
+  font-size: 26px;
+font-family: "Noto Serif Display", serif;
+  font-weight: 500;
+  margin: 0 0 20px 0;
 }
 
 .beliefs-section {
@@ -452,9 +454,4 @@ body {
     .thankyou-section {
         background-color: white;
     }
-}
-
-.journey-subtitle {
-  color: var(--foreground);
-  margin: 0 0 16px 0;
 }

@@ -100,19 +100,19 @@
 
     <section class="beliefs-section">
         <div class="container">
-            <h2 class="section-title">What I Believe</h2>
+            <h2 class="section-title beliefs-title">What I Believe</h2>
 
             <p class="beliefs-intro">
                 At Doltam Creative Solutions, every program I create reflects a simple truth:
             </p>
 
             <div class="beliefs-list">
-                <div class="belief-item">Your story is your strategy.</div>
-                <div class="belief-item">Your experience is your expertise.</div>
-                <div class="belief-item">Your purpose already exists — you just need the right blueprint to activate it.</div>
+                <div class="belief-item belief-1">Your story is your strategy.</div>
+                <div class="belief-item belief-2">Your experience is your expertise.</div>
+                <div class="belief-item belief-3">Your purpose already exists — you just need the right blueprint to activate it.</div>
             </div>
 
-            <p class="text-content">
+            <p class="text-content beliefs-closing">
                 Whether you're ready to leave corporate life, launch a passion project, or transform your expertise into a business, my work meets you where you are and helps you create what's next — with clarity, confidence, and courage.
             </p>
         </div>
@@ -121,15 +121,14 @@
 
     <section class="thankyou-section">
         <div class="container">
-            <h2 class="section-title">Thank You For Being Here</h2>
+            <h2 class="section-title thank-you title">Thank You For Being Here</h2>
 
             <div class="text-content">
-                <p>
+                <p class="thankyou-paragraph-1">
                     You're not here by coincidence. You're here because something inside you is whispering that it's time for more — more meaning, more freedom, more fulfillment.
                 </p>
-                <p>
-                    I'm here to help you create it.
-                    Thank you for being on the journey.
+                <p class="thankyou-paragraph-2">
+                    I'm here to help you create it. Thank you for being on the journey.
                 </p>
             </div>
         </div>
@@ -274,6 +273,31 @@ if (block.component === "journey") {
   if (block.subtitle && journeySubtitle) journeySubtitle.textContent = block.subtitle;
 
   renderParagraphs(block.paragraphs, ".journey-paragraphs");
+}
+if (block.component === "beliefs") {
+  const beliefsTitle = document.querySelector(".beliefs-title");
+  const beliefsIntro = document.querySelector(".beliefs-intro");
+  const belief1 = document.querySelector(".belief-1");
+  const belief2 = document.querySelector(".belief-2");
+  const belief3 = document.querySelector(".belief-3");
+  const beliefsClosing = document.querySelector(".beliefs-closing");
+
+  if (block.title && beliefsTitle) beliefsTitle.textContent = block.title;
+  if (block.intro && beliefsIntro) beliefsIntro.textContent = block.intro;
+  if (block.belief_1 && belief1) belief1.textContent = block.belief_1;
+  if (block.belief_2 && belief2) belief2.textContent = block.belief_2;
+  if (block.belief_3 && belief3) belief3.textContent = block.belief_3;
+  if (block.closing_text && beliefsClosing) beliefsClosing.textContent = block.closing_text;
+}
+
+if (block.component === "thankyou") {
+  const thankyouTitle = document.querySelector(".thankyou-title");
+  const thankyouParagraph1 = document.querySelector(".thankyou-paragraph-1");
+  const thankyouParagraph2 = document.querySelector(".thankyou-paragraph-2");
+
+  if (block.title && thankyouTitle) thankyouTitle.textContent = block.title;
+  if (block.paragraph_1 && thankyouParagraph1) thankyouParagraph1.textContent = block.paragraph_1;
+  if (block.paragraph_2 && thankyouParagraph2) thankyouParagraph2.textContent = block.paragraph_2;
 }
     });
   })
